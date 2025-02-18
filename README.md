@@ -99,7 +99,7 @@ These are the primary entities in Portarius:
 
 #### Inheritance Logic
 
-![Inheritance Logic](drawio/inheritance_logic.png)
+![Inheritance Logic](images/inheritance_logic.png)
 
 When a principal has permissions on a parent resource, those permissions propagate down the hierarchy.
 
