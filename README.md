@@ -140,8 +140,8 @@ Below is an example workflow for creating entities, assigning permissions, and c
 ###################################
 ## Set up variables for requests ##
 ###################################
-export AUTH_HEADER="x-api-key: <YOUR_API_KEY>"
-export ORG_ID="<YOUR_ORGANIZATION_ID>"
+export AUTH_HEADER="x-api-key: YOUR_API_KEY"
+export ORG_ID="YOUR_ORGANIZATION_ID"
 export BASE_URL="https://api.portarius.io"
 
 ##################################
@@ -154,11 +154,11 @@ curl -X POST $BASE_URL/principals \
   -H "$AUTH_HEADER" \
   -d '{
     "organization_id": "'$ORG_ID'",
-    "external_id": "<my_external_principal_id>"
+    "external_id": "CUSTOMER_PRINCIPAL_ID"
   }'
 # Output:
 # {
-#   "id": "<portarius_principal_id>"
+#   "id": "PORTARIUS_PRINCIPAL_ID"
 # }
 
 # Create a Parent Resource
@@ -167,12 +167,12 @@ curl -X POST $BASE_URL/resources \
   -H "$AUTH_HEADER" \
   -d '{
     "organization_id": "'$ORG_ID'",
-    "external_id": "<my_external_parent_resource_id>",
-    "name": "<my_resource_name>"
+    "external_id": "CUSTOMER_PARENT_RESOURCE_ID",
+    "name": "CUSTOMER_RESOURCE_NAME"
   }'
 # Output:
 # {
-#   "id": "<portarius_parent_resource_id>"
+#   "id": "PORTARIUS_PARENT_RESOURCE_ID"
 # }
 
 # Create a Child Resource using Portarius IDs
@@ -181,10 +181,10 @@ curl -X POST $BASE_URL/resources \
   -H "$AUTH_HEADER" \
   -d '{
     "organization_id": "'$ORG_ID'",
-    "external_id": "<my_external_child_resource_id>",
-    "name": "<my_resource_name>",
+    "external_id": "CUSTOMER_EXTERNAL_CHILD_RESOURCE_ID",
+    "name": "CUSTOMER_RESOURCE_NAME",
     "parent_id_type": "id",
-    "parent_id_value": "<portarius_parent_resource_id>"
+    "parent_id_value": "PORTARIUS_PARENT_RESOURCE_ID"
   }'
 
 # -- OR --
@@ -195,15 +195,15 @@ curl -X POST $BASE_URL/resources \
   -H "$AUTH_HEADER" \
   -d '{
     "organization_id": "'$ORG_ID'",
-    "external_id": "<my_external_child_resource_id>",
-    "name": "<my_resource_name>",
+    "external_id": "CUSTOMER_EXTERNAL_CHILD_RESOURCE_ID",
+    "name": "CUSTOMER_RESOURCE_NAME",
     "parent_id_type": "external_id",
-    "parent_id_value": "<my_external_parent_resource_id>"
+    "parent_id_value": "CUSTOMER_PARENT_RESOURCE_ID"
   }'
 
 # Output:
 # {
-#   "id": "<portarius_child_resource_id>"
+#   "id": "PORTARIUS_CHILD_RESOURCE_ID"
 # }
 
 # Create a Permission
@@ -212,12 +212,12 @@ curl -X POST $BASE_URL/permissions \
   -H "$AUTH_HEADER" \
   -d '{
     "organization_id": "'$ORG_ID'",
-    "name": "<my_permission_name>",
-    "description": "<my_permission_description>"
+    "name": "CUSTOMER_PERMISSION_NAME",
+    "description": "CUSTOMER_PERMISSION_DESCRIPTION"
   }'
 # Output:
 # {
-#   "id": "<portarius_permission_id>"
+#   "id": "PORTARIUS_PERMISSION_ID"
 # }
 
 ###########################
@@ -231,10 +231,10 @@ curl -X POST $BASE_URL/permission-assignments \
   -d '{
     "organization_id": "'$ORG_ID'",
     "principal_id_type": "id",
-    "principal_id_value": "<portarius_principal_id>",
+    "principal_id_value": "PORTARIUS_PRINCIPAL_ID",
     "resource_id_type": "id",
-    "resource_id_value": "<portarius_resource_id>",
-    "permission_id": "<portarius_permission_id>"
+    "resource_id_value": "PORTARIUS_PARENT_RESOURCE_ID",
+    "permission_id": "PORTARIUS_PERMISSION_ID"
   }'
 
 # -- OR --
@@ -246,14 +246,14 @@ curl -X POST $BASE_URL/permission-assignments \
   -d '{
     "organization_id": "'$ORG_ID'",
     "principal_id_type": "external_id",
-    "principal_id_value": "<my_external_principal_id>",
+    "principal_id_value": "CUSTOMER_PRINCIPAL_ID",
     "resource_id_type": "external_id",
-    "resource_id_value": "<my_external_parent_resource_id>",
-    "permission_id": "<portarius_permission_id>"
+    "resource_id_value": "CUSTOMER_PARENT_RESOURCE_ID",
+    "permission_id": "PORTARIUS_PERMISSION_ID"
   }'
 # Output:
 # {
-#   "id": "<portarius_permission_assignment_id>"
+#   "id": "PORTARIUS_PERMISSION_ASSIGNMENT_ID"
 # }
 
 ######################
@@ -261,14 +261,14 @@ curl -X POST $BASE_URL/permission-assignments \
 ######################
 
 # Check if a Principal has a specific Permission on a Child Resource (Portarius IDs)
-curl -X GET "$BASE_URL/check?organization_id=$ORG_ID&principal_id_type=id&principal_id_value=<portarius_principal_id>&permission_id=<portarius_permission_id>&resource_id_type=id&resource_id_value=<portarius_child_resource_id>" \
+curl -X GET "$BASE_URL/check?organization_id=$ORG_ID&principal_id_type=id&principal_id_value=PORTARIUS_PRINCIPAL_ID&permission_id=PORTARIUS_PERMISSION_ID&resource_id_type=id&resource_id_value=PORTARIUS_CHILD_RESOURCE_ID" \
   -H "Content-Type: application/json" \
   -H "$AUTH_HEADER"
 
 # -- OR --
 
 # Check if a Principal has a specific Permission on a Child Resource (External IDs)
-curl -X GET "$BASE_URL/check?organization_id=$ORG_ID&principal_id_type=external_id&principal_id_value=<my_external_principal_id>&permission_id=<portarius_permission_id>&resource_id_type=external_id&resource_id_value=<my_external_child_resource_id>" \
+curl -X GET "$BASE_URL/check?organization_id=$ORG_ID&principal_id_type=external_id&principal_id_value=CUSTOMER_PRINCIPAL_ID&permission_id=PORTARIUS_PERMISSION_ID&resource_id_type=external_id&resource_id_value=CUSTOMER_EXTERNAL_CHILD_RESOURCE_ID" \
   -H "Content-Type: application/json" \
   -H "$AUTH_HEADER"
 
