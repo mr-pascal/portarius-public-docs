@@ -183,7 +183,7 @@ curl -X POST $BASE_URL/resources \
     "organization_id": "'$ORG_ID'",
     "external_id": "<my_external_child_resource_id>",
     "name": "<my_resource_name>",
-    "parent_id_type": "id"
+    "parent_id_type": "id",
     "parent_id_value": "<portarius_parent_resource_id>"
   }'
 
@@ -197,7 +197,7 @@ curl -X POST $BASE_URL/resources \
     "organization_id": "'$ORG_ID'",
     "external_id": "<my_external_child_resource_id>",
     "name": "<my_resource_name>",
-    "parent_id_type": "external_id"
+    "parent_id_type": "external_id",
     "parent_id_value": "<my_external_parent_resource_id>"
   }'
 
@@ -248,7 +248,7 @@ curl -X POST $BASE_URL/permission-assignments \
     "principal_id_type": "external_id",
     "principal_id_value": "<my_external_principal_id>",
     "resource_id_type": "external_id",
-    "resource_id_value": "<my_external_resource_id>",
+    "resource_id_value": "<my_external_parent_resource_id>",
     "permission_id": "<portarius_permission_id>"
   }'
 # Output:
