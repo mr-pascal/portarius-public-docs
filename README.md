@@ -13,9 +13,8 @@ Portarius delivers deeply customizable resource-based access control with hierar
 - [3. Concepts & Terminology](#3-concepts--terminology)
 - [4. API Reference](#4-api-reference)
 - [5. Troubleshooting](#5-troubleshooting)
-- [6. Pricing](#6-pricing)
-- [7. FAQs](#7-faqs)
-- [8. Feedback](#8-feedback)
+- [6. FAQs](#6-faqs)
+- [7. Feedback](#7-feedback)
 
 ---
 
@@ -294,38 +293,7 @@ For immediate support, please contact us via email.
 
 ---
 
-## 6. Pricing
-
-Portarius offers flexible pricing to suit both pay-as-you-go and committed usage. Choose from a free tier, pay-as-you-go, or a commitment-based plan for volume discounts.
-
-### Pricing Overview
-
-- **Free Tier**
-  1,000 read and 250 write requests per day, plus 100 stored entities at no charge.
-- **Commitment Plans**
-  Monthly or annual commitments at discounted rates.
-- **Pay-as-you-go**
-  Charges apply for usage exceeding the free tier or your committed amount.
-
-### Request Prices
-
-| Request Type      | Price (€) |       per        |
-| ----------------- | :-------: | :--------------: |
-| **Read Request**  |   1.00    | 100,000 requests |
-| **Write Request** |   1.50    | 100,000 requests |
-| **Storage**       |   0.50    |  1,000 entities  |
-
-- **Read Request**: Any GET request to the API.
-- **Write Request**: Any POST, PUT, PATCH, or DELETE request to the API.
-- **Entity**: A resource, permission, principal, or permission assignment.
-
-### Commitment Plan
-
-Contact us for more details and to discuss your specific usage needs.
-
----
-
-## 7. FAQs
+## 6. FAQs
 
 <details>
   <summary>Do you provide a UI for visualization/management?</summary>
@@ -339,7 +307,7 @@ Contact us for more details and to discuss your specific usage needs.
 
 ---
 
-## 8. Feedback
+## 7. Feedback
 
 For bug reports, feature requests, or support inquiries, please send an email to our team.
 We value your feedback and strive to continually improve Portarius.
