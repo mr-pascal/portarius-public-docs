@@ -2,7 +2,7 @@
 
 ## Secure the Gate with Portarius: Why the Name?
 
-"Portarius," derived from the Latin word for "gatekeeper," reflects the platform's core purpose: providing secure and efficient **IAM (Identity and Access Management) as a Service** for your critical systems. As a digital gatekeeper, Portarius enforces fine-grained, hierarchical permissions for identities and resources, ensuring only authorized access through a streamlined, API-first approach.
+"Portarius," derived from the Latin word for "gatekeeper," reflects the platform's core purpose: providing secure and efficient **Permission Management as a Service** for your critical systems. As a digital gatekeeper, Portarius enforces fine-grained, hierarchical permissions for identities and resources, ensuring only authorized access through a streamlined, API-first approach.
 
 Portarius delivers deeply customizable resource-based access control with hierarchical structures.
 
@@ -22,7 +22,7 @@ Portarius delivers deeply customizable resource-based access control with hierar
 
 ### Overview of the product
 
-Portarius is an **API-first identity and access management (IAM) platform** built for **service-to-service** integration. It provides a straightforward way to implement **scalable, hierarchical permission management** within your software, ensuring you can manage complex access needs efficiently.
+Portarius is an **API-first Permission management platform** built for **service-to-service** integration. It provides a straightforward way to implement **scalable, hierarchical permission management** within your software, ensuring you can manage complex access needs efficiently.
 
 With Portarius, you can:
 
@@ -51,7 +51,7 @@ Portarius is especially useful for SaaS providers and enterprise platforms that 
 1. **Scalable, hierarchical, fine-grained access control**
    Tackle complex permission models that evolve with your product.
 2. **A simplified approach to enforcing access policies**
-   Avoid the overhead of building and maintaining your own IAM system.
+   Avoid the overhead of building and maintaining your own permission management system.
 3. **A developer-friendly, API-first solution**
    Integrate quickly into existing workflows and tech stacks.
 
